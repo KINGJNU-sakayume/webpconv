@@ -79,6 +79,16 @@ WebP 파일을 iOS 사진앱에서 재생 가능한 형식(MP4 · JPEG)으로 �
         └── jszip.min.js
 ```
 
+## 저장소 상태 참고
+
+현재 이 저장소에는 `vendor/ffmpeg/`의 `ffmpeg.js`, `814.ffmpeg.js`, `ffmpeg-core.js`만 올라와 있습니다. 앱이 필요로 하는 다음 파일과 `.nojekyll`은 **아직 커밋되어 있지 않습니다.**
+
+- `vendor/ffmpeg/util.js`
+- `vendor/ffmpeg/ffmpeg-core.wasm` (~31MB)
+- `vendor/jszip/jszip.min.js`
+
+이 파일들이 없으면 애니메이션 변환과 ZIP 다운로드가 동작하지 않습니다. [`vendor/README.md`](vendor/README.md)의 "How to refresh these files" 절차대로 npm 패키지에서 꺼내 채우고, 배포 전에 `.nojekyll`을 루트에 추가하세요. (`sw.js`를 바꿨다면 `CACHE_VERSION`도 올려야 합니다.)
+
 ## 라이선스
 
 이 프로젝트의 코드는 MIT.
